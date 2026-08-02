@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Malitha Sandaruwan">
+  <main class="max-w-2xl mx-auto min-h-screen px-6 py-12 flex flex-col justify-between font-sans">
+    
+    <!-- Top Header & Dark Mode Toggle -->
+    <header class="flex justify-between items-center mb-10">
+      <div class="flex items-center gap-3">
+        <span class="font-mono text-lg tracking-wider text-zinc-500 dark:text-zinc-400">Malitha.DEV</span>
+      </div>
+      
+      <!-- Theme Toggle Button -->
+      <button 
+        id="theme-toggle" 
+        type="button" 
+        class="px-3 py-1.5 text-xs font-mono border rounded-xl border-zinc-300 dark:border-zinc-800 bg-zinc-200/50 dark:bg-zinc-900/80 text-zinc-700 dark:text-zinc-300 hover:border-zinc-400 dark:hover:border-zinc-700 transition cursor-pointer"
+      >
+        <span class="dark:hidden">☀️ Light</span>
+        <span class="hidden dark:inline">🌙 Dark</span>
+      </button>
+    </header>
+
+    <!-- Main Content Stack -->
+    <div class="space-y-10">
+      
+      <!-- Hero Section -->
+      <section class="space-y-3">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100">
+          Malitha Sandaruwan
+        </h1>
+        <p class="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl">
+          1st Year Computer Science & Applied AI Student.
+        </p>
+      </section>
+
+      <!-- Proof of Work Grid -->
+      <section class="space-y-3">
+        <h2 class="text-[11px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Proof of Work</h2>
+        
+        <div class="space-y-3">
+          <!-- Project 1: metric.lk -->
+          <a href="https://Metric.lk" target="_blank" class="group block p-4 border border-zinc-200/80 dark:border-zinc-800/60 rounded-2xl bg-white dark:bg-zinc-900/40 hover:border-zinc-400 dark:hover:border-zinc-700 transition duration-200">
+            <div class="flex justify-between items-center mb-1">
+              <h3 class="font-semibold text-sm group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">Metric.lk ↗</h3>
+              <span class="text-[11px] text-emerald-600 dark:text-emerald-400 font-mono">Live</span>
+            </div>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">Data visualization and economic metric tracking platform for Sri Lanka.</p>
+          </a>
+
+          <!-- Project 2: Wealth Terminal -->
+          <a href="https://github.com/MalithaSandaru/wealth-terminal" target="_blank" class="group block p-4 border border-zinc-200/80 dark:border-zinc-800/60 rounded-2xl bg-white dark:bg-zinc-900/40 hover:border-zinc-400 dark:hover:border-zinc-700 transition duration-200">
+            <div class="flex justify-between items-start mb-1">
+              <h3 class="font-semibold text-sm group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition">Wealth Terminal ↗</h3>
+              <span class="text-[11px] text-zinc-400 font-mono">Python / Supabase</span>
+            </div>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400 leading-normal">Personal financial tracking, asset management, and portfolio analytics dashboard.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Connect Section -->
+      <section class="space-y-3">
+        <h2 class="text-[11px] font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">Connect</h2>
+        <div class="flex flex-wrap gap-4 text-xs font-mono text-zinc-600 dark:text-zinc-400">
+          <a href="https://github.com/MalithaSandaru" target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition">GitHub ↗</a>
+          <a href="https://x.com/MalithaSandaru" target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition">X ↗</a>
+          <a href="https://www.linkedin.com/in/MalithaSandaru/" target="_blank" class="hover:text-zinc-900 dark:hover:text-white transition">LinkedIn ↗</a>
+          <a href="mailto:contact@malitha.dev" class="hover:text-zinc-900 dark:hover:text-white transition">Email ↗</a>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-[11px] text-zinc-400 dark:text-zinc-600 font-mono">
+      © {new Date().getFullYear()} Malitha Sandaruwan
+    </footer>
+
+  </main>
+</Layout>
+
+<!-- Client Script for Dark Mode Toggle -->
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  
+  toggleBtn?.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  });
+</script>
