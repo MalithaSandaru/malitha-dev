@@ -1,6 +1,6 @@
-# malitha.dev
+# [Malitha.dev](https://malitha.dev)
 
-Minimalist, high-performance personal portfolio and systems showcase.
+Minimalist, high-performance personal portfolio and systems showcase. Live at [malitha.dev](https://malitha.dev).
 
 ## Tech Stack
 
