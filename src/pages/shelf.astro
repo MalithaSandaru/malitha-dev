@@ -2,65 +2,27 @@
 import Layout from '../layouts/Layout.astro';
 
 const books = [
-  { title: "American Kingpin", url: "https://www.amazon.com/dp/B06Y1QXMXX" },
-  { title: "Deep Work", url: "https://www.amazon.com/dp/1455586692" },
-  { title: "Elon Musk", url: "https://www.amazon.com/dp/1982181281" },
   { title: "Hatching Twitter", url: "https://www.amazon.com/dp/1591847087" },
   { title: "Sapiens", url: "https://www.amazon.com/dp/0062316095" },
-  { title: "Shoe Dog", url: "https://www.amazon.com/dp/1501135929" },
   { title: "Steve Jobs", url: "https://www.amazon.com/dp/1451648537" },
-  { title: "The Almanack of Naval Ravikant", url: "https://www.amazon.com/dp/1544514212" },
   { title: "The Black Swan", url: "https://www.amazon.com/dp/081297381X" },
-  { title: "The Founders: The Story of Paypal", url: "https://www.amazon.com/dp/1501197266" },
-  { title: "The Innovators", url: "https://www.amazon.com/dp/1594138850" },
-  { title: "Zero to One", url: "https://www.amazon.com/dp/0804139296" },
+  { title: "American Kingpin", url: "https://www.amazon.com/dp/B06Y1QXMXX" }
 ];
 
 const cinema = [
   { title: "2001: A Space Odyssey", url: "https://en.wikipedia.org/wiki/2001:_A_Space_Odyssey_(film)" },
-  { title: "Arrival", url: "https://en.wikipedia.org/wiki/Arrival_(film)" },
   { title: "Black Swan", url: "https://en.wikipedia.org/wiki/Black_Swan_(film)" },
-  { title: "Ex Machina", url: "https://en.wikipedia.org/wiki/Ex_Machina_(film)" },
   { title: "Fight Club", url: "https://en.wikipedia.org/wiki/Fight_Club" },
-  { title: "Ford v Ferrari", url: "https://en.wikipedia.org/wiki/Ford_v_Ferrari" },
-  { title: "Gone Girl", url: "https://en.wikipedia.org/wiki/Gone_Girl_(film)" },
-  { title: "Good Will Hunting", url: "https://en.wikipedia.org/wiki/Good_Will_Hunting" },
-  { title: "Inception", url: "https://en.wikipedia.org/wiki/Inception" },
-  { title: "Inglourious Basterds", url: "https://en.wikipedia.org/wiki/Inglourious_Basterds" },
   { title: "Interstellar", url: "https://en.wikipedia.org/wiki/Interstellar_(film)" },
-  { title: "Margin Call", url: "https://en.wikipedia.org/wiki/Margin_Call" },
   { title: "Nightcrawler", url: "https://en.wikipedia.org/wiki/Nightcrawler_(film)" },
-  { title: "Oppenheimer", url: "https://en.wikipedia.org/wiki/Oppenheimer_(film)" },
-  { title: "Project Hail Mary", url: "https://en.wikipedia.org/wiki/Project_Hail_Mary_(film)" },
-  { title: "Sound of Metal", url: "https://en.wikipedia.org/wiki/Sound_of_Metal" },
-  { title: "Tenet", url: "https://en.wikipedia.org/wiki/Tenet_(film)" },
-  { title: "The Batman", url: "https://en.wikipedia.org/wiki/The_Batman_(film)" },
-  { title: "The Big Short", url: "https://en.wikipedia.org/wiki/The_Big_Short_(film)" },
-  { title: "The Curious Case of Benjamin Button", url: "https://en.wikipedia.org/wiki/The_Curious_Case_of_Benjamin_Button_(film)" },
-  { title: "The Dark Knight", url: "https://en.wikipedia.org/wiki/The_Dark_Knight" },
-  { title: "The Imitation Game", url: "https://en.wikipedia.org/wiki/The_Imitation_Game" },
-  { title: "The Odyssey", url: "https://en.wikipedia.org/wiki/The_Odyssey_(2026_film)" },
-  { title: "The Social Network", url: "https://en.wikipedia.org/wiki/The_Social_Network" },
-  { title: "Whiplash", url: "https://en.wikipedia.org/wiki/Whiplash_(2014_film)" },
-  { title: "Who Am I", url: "https://en.wikipedia.org/wiki/Who_Am_I_(2014_film)" },
 ];
 
 const television = [
+  { title: "Succession", url: "https://en.wikipedia.org/wiki/Succession_(TV_series)", ongoing: false },
   { title: "Better Call Saul", url: "https://en.wikipedia.org/wiki/Better_Call_Saul", ongoing: false },
-  { title: "Black Mirror", url: "https://en.wikipedia.org/wiki/Black_Mirror", ongoing: true },
-  { title: "Devs", url: "https://en.wikipedia.org/wiki/Devs_(TV_series)", ongoing: false },
-  { title: "Hannibal", url: "https://en.wikipedia.org/wiki/Hannibal_(TV_series)", ongoing: false },
-  { title: "House of Cards (S01–S02)", url: "https://en.wikipedia.org/wiki/House_of_Cards_(American_TV_series)", ongoing: false },
-  { title: "Invincible", url: "https://en.wikipedia.org/wiki/Invincible_(TV_series)", ongoing: true },
   { title: "Mindhunter", url: "https://en.wikipedia.org/wiki/Mindhunter_(TV_series)", ongoing: false },
   { title: "Mr. Robot", url: "https://en.wikipedia.org/wiki/Mr._Robot", ongoing: false },
-  { title: "Pluribus", url: "https://en.wikipedia.org/wiki/Pluribus_(TV_series)", ongoing: true },
-  { title: "Rick and Morty", url: "https://en.wikipedia.org/wiki/Rick_and_Morty", ongoing: true },
-  { title: "Succession", url: "https://en.wikipedia.org/wiki/Succession_(TV_series)", ongoing: false },
-  { title: "The Bear", url: "https://en.wikipedia.org/wiki/The_Bear_(TV_series)", ongoing: true },
-  { title: "True Detective (S01)", url: "https://en.wikipedia.org/wiki/True_Detective_(season_1)", ongoing: false },
-  { title: "WeCrashed", url: "https://en.wikipedia.org/wiki/WeCrashed", ongoing: false },
-  { title: "Westworld (S01)", url: "https://en.wikipedia.org/wiki/Westworld_(season_1)", ongoing: false },
+  { title: "Pluribus", url: "https://en.wikipedia.org/wiki/Pluribus_(TV_series)", ongoing: true }
 ];
 
 const documentaries = [
@@ -72,7 +34,7 @@ const documentaries = [
 
 <Layout 
   title="Shelf" 
-  description="Things worth reading and watching."
+  description="Curated references across books, cinema, and media."
 >
   <main class="max-w-2xl mx-auto px-6 pt-8 sm:pt-12 pb-20 sm:pb-24 font-sans">
     
@@ -86,17 +48,12 @@ const documentaries = [
       </a>
     </header>
 
-    <div class="space-y-12">
+    <div class="space-y-10">
       
-      <!-- Section Intro -->
-      <section class="space-y-1">
-        <h1 class="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
-          Shelf
-        </h1>
-        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
-          Things worth reading and watching.
-        </p>
-      </section>
+      <!-- Page Label -->
+      <h1 class="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+        Shelf
+      </h1>
 
       <!-- Media Sections -->
       <div class="space-y-10">
