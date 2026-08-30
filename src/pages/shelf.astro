@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const books = [
+  { title: "American Kingpin", meta: "2017 · Nick Bilton" },
+  { title: "Deep Work", meta: "2016 · Cal Newport" },
+  { title: "Elon Musk", meta: "2023 · Walter Isaacson" },
+  { title: "Hatching Twitter", meta: "2013 · Nick Bilton" },
+  { title: "Sapiens", meta: "2011 · Yuval Noah Harari" },
+  { title: "Shoe Dog", meta: "2016 · Phil Knight" },
+  { title: "Steve Jobs", meta: "2011 · Walter Isaacson" },
+  { title: "The Almanack of Naval Ravikant", meta: "2020 · Eric Jorgenson" },
+  { title: "The Black Swan", meta: "2007 · Nassim Nicholas Taleb" },
+  { title: "The Founders: The Story of Paypal", meta: "2021 · Jimmy Soni" },
+  { title: "The Innovators", meta: "2014 · Walter Isaacson" },
+  { title: "Zero to One", meta: "2014 · Peter Thiel" },
+];
+
+const cinema = [
+  { title: "2001: A Space Odyssey", meta: "1968 · Stanley Kubrick" },
+  { title: "Arrival", meta: "2016 · Denis Villeneuve" },
+  { title: "Black Swan", meta: "2010 · Darren Aronofsky" },
+  { title: "Ex Machina", meta: "2014 · Alex Garland" },
+  { title: "Fight Club", meta: "1999 · David Fincher" },
+  { title: "Ford v Ferrari", meta: "2019 · James Mangold" },
+  { title: "Gone Girl", meta: "2014 · David Fincher" },
+  { title: "Good Will Hunting", meta: "1997 · Gus Van Sant" },
+  { title: "Inception", meta: "2010 · Christopher Nolan" },
+  { title: "Inglourious Basterds", meta: "2009 · Quentin Tarantino" },
+  { title: "Interstellar", meta: "2014 · Christopher Nolan" },
+  { title: "Margin Call", meta: "2011 · J.C. Chandor" },
+  { title: "Nightcrawler", meta: "2014 · Dan Gilroy" },
+  { title: "Oppenheimer", meta: "2023 · Christopher Nolan" },
+  { title: "Project Hail Mary", meta: "2026 · Lord & Miller" },
+  { title: "Sound of Metal", meta: "2019 · Darius Marder" },
+  { title: "Tenet", meta: "2020 · Christopher Nolan" },
+  { title: "The Batman", meta: "2022 · Matt Reeves" },
+  { title: "The Big Short", meta: "2015 · Adam McKay" },
+  { title: "The Curious Case of Benjamin Button", meta: "2008 · David Fincher" },
+  { title: "The Dark Knight", meta: "2008 · Christopher Nolan" },
+  { title: "The Imitation Game", meta: "2014 · Morten Tyldum" },
+  { title: "The Odyssey", meta: "2026 · Christopher Nolan" },
+  { title: "The Social Network", meta: "2010 · David Fincher" },
+  { title: "Whiplash", meta: "2014 · Damien Chazelle" },
+  { title: "Who Am I", meta: "2014 · Baran bo Odar" },
+];
+
+const television = [
+  { title: "Better Call Saul", meta: "Gilligan & Gould", ongoing: false },
+  { title: "Black Mirror", meta: "Charlie Brooker", ongoing: true },
+  { title: "Devs", meta: "Alex Garland", ongoing: false },
+  { title: "Hannibal", meta: "Bryan Fuller", ongoing: false },
+  { title: "House of Cards (S01–S02)", meta: "Beau Willimon", ongoing: false },
+  { title: "Invincible", meta: "Robert Kirkman", ongoing: true },
+  { title: "Mindhunter", meta: "David Fincher", ongoing: false },
+  { title: "Mr. Robot", meta: "Sam Esmail", ongoing: false },
+  { title: "Pluribus", meta: "Vince Gilligan", ongoing: true },
+  { title: "Rick and Morty", meta: "Justin & Dan", ongoing: true },
+  { title: "Succession", meta: "Jesse Armstrong", ongoing: false },
+  { title: "The Bear", meta: "Christopher Storer", ongoing: true },
+  { title: "True Detective (S01)", meta: "Nic Pizzolatto", ongoing: false },
+  { title: "WeCrashed", meta: "Crevello & Eisenberg", ongoing: false },
+  { title: "Westworld (S01)", meta: "Nolan & Joy", ongoing: false },
+];
+
+const documentaries = [
+  { title: "AlphaGo", meta: "2017 · DeepMind" },
+  { title: "Jeen-Yuhs", meta: "2022 · Coodie & Chike" },
+  { title: "The Thinking Game", meta: "2024 · Greg Kohs" },
+];
+---
+
+<Layout 
+  title="Shelf" 
+  description="Things worth reading and watching."
+>
+  <main class="max-w-2xl mx-auto px-6 pt-8 sm:pt-12 pb-20 sm:pb-24 font-sans">
+    
+    <!-- Top Minimal Navigation -->
+    <header class="mb-10 sm:mb-12">
+      <a 
+        href="/" 
+        class="inline-flex items-center gap-1.5 text-xs font-mono text-zinc-500 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-100 transition px-3 py-1.5 rounded-xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-50/50 dark:bg-zinc-900/40 hover:border-zinc-400 dark:hover:border-zinc-700"
+      >
+        ← Home
+      </a>
+    </header>
+
+    <div class="space-y-12">
+      
+      <!-- Section Intro -->
+      <section class="space-y-1">
+        <h1 class="text-xs font-mono uppercase tracking-widest text-zinc-400 dark:text-zinc-500">
+          Shelf
+        </h1>
+        <p class="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+          Things worth reading and watching.
+        </p>
+      </section>
+
+      <!-- Media Sections -->
+      <div class="space-y-12">
+        
+        <!-- Books -->
+        <section class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Literature & Biographies
+          </h2>
+          <div class="flex flex-col space-y-2 text-xs font-mono">
+            {books.map((item) => (
+              <div class="group flex items-baseline justify-between gap-4 py-0.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition">
+                <span class="truncate">{item.title}</span>
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-500 dark:group-hover:text-zinc-400 shrink-0 text-right transition">
+                  {item.meta}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Cinema -->
+        <section class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Cinema
+          </h2>
+          <div class="flex flex-col space-y-2 text-xs font-mono">
+            {cinema.map((item) => (
+              <div class="group flex items-baseline justify-between gap-4 py-0.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition">
+                <span class="truncate">{item.title}</span>
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-500 dark:group-hover:text-zinc-400 shrink-0 text-right transition">
+                  {item.meta}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Television -->
+        <section class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Television & Series
+          </h2>
+          <div class="flex flex-col space-y-2 text-xs font-mono">
+            {television.map((item) => (
+              <div class="group flex items-baseline justify-between gap-4 py-0.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition">
+                <span class="truncate flex items-center gap-1">
+                  {item.title}
+                  {item.ongoing && (
+                    <span class="text-zinc-400 dark:text-zinc-500 select-none">*</span>
+                  )}
+                </span>
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-500 dark:group-hover:text-zinc-400 shrink-0 text-right transition">
+                  {item.meta}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <!-- Documentaries -->
+        <section class="space-y-3">
+          <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-900 dark:text-zinc-100 border-b border-zinc-200 dark:border-zinc-800 pb-2">
+            Documentaries
+          </h2>
+          <div class="flex flex-col space-y-2 text-xs font-mono">
+            {documentaries.map((item) => (
+              <div class="group flex items-baseline justify-between gap-4 py-0.5 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white transition">
+                <span class="truncate">{item.title}</span>
+                <span class="text-[11px] text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-500 dark:group-hover:text-zinc-400 shrink-0 text-right transition">
+                  {item.meta}
+                </span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Minimal Footer with Footnote -->
+      <footer class="pt-8 border-t border-zinc-200/60 dark:border-zinc-800/60 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs font-mono text-zinc-400 dark:text-zinc-600">
+        <span>* Ongoing / in production</span>
+      </footer>
+
+    </div>
+  </main>
+</Layout>
